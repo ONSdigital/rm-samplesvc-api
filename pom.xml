@@ -1,32 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
-  <groupId>uk.gov.ons.ctp.product</groupId>
-  <artifactId>sampleservice</artifactId>
+
+  <artifactId>samplesvc-api</artifactId>
   <version>10.45.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
-  <name>CTP : SampleService</name>
-  <description>CTP : SampleService</description>
+  <name>CTP : ResponseManagement : SampleSvcApi</name>
+  <description>CTP : ResponseManagement : SampleSvcApi</description>
 
-  <properties>
-    <commonbom.version>10.45.0-SNAPSHOT</commonbom.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  </properties>
-
-  <!-- Section below required to inherit plugins version & config -->
   <parent>
     <groupId>uk.gov.ons.ctp.product</groupId>
     <artifactId>rm-common-config</artifactId>
     <version>10.45.0-SNAPSHOT</version>
   </parent>
-
-  <modules>
-    <module>samplesvc-api</module>
-    <module>samplesvc</module>
-  </modules>
+  
+  <properties>
+    <commonbom.version>10.45.0-SNAPSHOT</commonbom.version>
+    <skip.integration.tests>true</skip.integration.tests>
+    <java.version>1.8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
 
   <dependencyManagement>
     <dependencies>
@@ -41,15 +37,207 @@
   </dependencyManagement>
 
   <scm>
-    <connection>scm:git:git@github.com:ONSdigital/rm-sample-service.git</connection>
-    <developerConnection>scm:git:git@github.com:ONSdigital/rm-sample-service.git</developerConnection>
-    <url>git@github.com:ONSdigital/rm-sample-service.git</url>
+    <connection>scm:git:git@github.com:ONSdigital/rm-samplesvc-api.git</connection>
+    <developerConnection>scm:git:git@github.com:ONSdigital/rm-samplesvc-api.git</developerConnection>
+    <url>git@github.com:ONSdigital/rm-samplesvc-api.git</url>
   </scm>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>uk.gov.ons.ctp.common</groupId>
+      <artifactId>framework</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>net.codesup.util</groupId>
+      <artifactId>jaxb2-rich-contract-plugin</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+    </dependency>
+  </dependencies>
 
   <build>
     <defaultGoal>clean install</defaultGoal>
 
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>uk.gov.ons.ctp.product</groupId>
+          <artifactId>rm-common-config</artifactId>
+          <version>${commonbom.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    
     <plugins>
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <id>census-xjc</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <bindingDirectory>src/main/resources/samplesvc/xsd/inbound</bindingDirectory>
+              <bindingIncludes>
+                <include>census-survey-sample.xjb</include>
+              </bindingIncludes>
+              <bindingExcludes>
+                <include>business-survey-sample.xjb</include>
+                <include>social-survey-sample.xjb</include>
+              </bindingExcludes>
+              <schemaDirectory>src/main/resources/samplesvc/xsd/inbound</schemaDirectory>
+              <schemaIncludes>
+                <include>census-survey-sample.xsd</include>
+                <include>business-survey-sample.xsd</include>
+                <include>social-survey-sample.xsd</include>
+              </schemaIncludes>
+              <generateDirectory>${project.build.directory}/generated-sources/xjc/inbound</generateDirectory>
+              <args>
+                <arg>-Xvalue-constructor</arg>
+                <arg>-Xfluent-builder</arg>
+                <arg>-generateTools=n</arg>
+              </args>
+              <plugins>
+                <plugin>
+                  <groupId>net.codesup.util</groupId>
+                  <artifactId>jaxb2-rich-contract-plugin</artifactId>
+                  <version>1.18.0</version>
+                </plugin>
+                <plugin>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-value-constructor</artifactId>
+                  <version>3.0</version>
+                </plugin>
+              </plugins>
+            </configuration>
+          </execution>
+          <execution>
+            <phase>generate-sources</phase>
+            <id>business-xjc</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <bindingDirectory>src/main/resources/samplesvc/xsd/inbound</bindingDirectory>
+              <bindingIncludes>
+                <include>business-survey-sample.xjb</include>
+              </bindingIncludes>
+              <bindingExcludes>
+                <include>census-survey-sample.xjb</include>
+                <include>social-survey-sample.xsd</include>
+              </bindingExcludes>
+              <schemaDirectory>src/main/resources/samplesvc/xsd/inbound</schemaDirectory>
+              <schemaIncludes>
+                <include>census-survey-sample.xsd</include>
+                <include>business-survey-sample.xsd</include>
+                <include>social-survey-sample.xsd</include>
+              </schemaIncludes>
+              <generateDirectory>${project.build.directory}/generated-sources/xjc/inbound</generateDirectory>
+              <args>
+                <arg>-Xvalue-constructor</arg>
+                <arg>-Xfluent-builder</arg>
+                <arg>-generateTools=n</arg>
+              </args>
+              <plugins>
+                <plugin>
+                  <groupId>net.codesup.util</groupId>
+                  <artifactId>jaxb2-rich-contract-plugin</artifactId>
+                  <version>1.18.0</version>
+                </plugin>
+                <plugin>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-value-constructor</artifactId>
+                  <version>3.0</version>
+                </plugin>
+              </plugins>
+            </configuration>
+          </execution>
+          <execution>
+            <phase>generate-sources</phase>
+            <id>social-xjc</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <bindingDirectory>src/main/resources/samplesvc/xsd/inbound</bindingDirectory>
+              <bindingIncludes>
+                <include>social-survey-sample.xjb</include>
+              </bindingIncludes>
+              <bindingExcludes>
+                <include>business-survey-sample.xjb</include>
+                <include>census-survey-sample.xjb</include>
+              </bindingExcludes>
+              <schemaDirectory>src/main/resources/samplesvc/xsd/inbound</schemaDirectory>
+              <schemaIncludes>
+                <include>census-survey-sample.xsd</include>
+                <include>business-survey-sample.xsd</include>
+                <include>social-survey-sample.xsd</include>
+              </schemaIncludes>
+              <generateDirectory>${project.build.directory}/generated-sources/xjc/inbound</generateDirectory>
+              <args>
+                <arg>-Xvalue-constructor</arg>
+                <arg>-Xfluent-builder</arg>
+                <arg>-generateTools=n</arg>
+              </args>
+              <plugins>
+                <plugin>
+                  <groupId>net.codesup.util</groupId>
+                  <artifactId>jaxb2-rich-contract-plugin</artifactId>
+                  <version>1.18.0</version>
+                </plugin>
+                <plugin>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-value-constructor</artifactId>
+                  <version>3.0</version>
+                </plugin>
+              </plugins>
+            </configuration>
+          </execution>
+          <execution>
+            <phase>generate-sources</phase>
+            <id>outbound-xjc-gen</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <bindingDirectory>src/main/resources/samplesvc/xsd/outbound</bindingDirectory>
+              <bindingIncludes>
+                <include>sample-unit.xjb</include>
+              </bindingIncludes>
+              <schemaDirectory>src/main/resources/samplesvc/xsd/outbound</schemaDirectory>
+              <schemaIncludes>
+                <include>sample-unit.xsd</include>
+              </schemaIncludes>
+              <generateDirectory>${project.build.directory}/generated-sources/xjc/outbound</generateDirectory>
+              <args>
+                <arg>-Xvalue-constructor</arg>
+                <arg>-Xfluent-builder</arg>
+                <arg>-generateTools=n</arg>
+              </args>
+              <plugins>
+                <plugin>
+                  <groupId>net.codesup.util</groupId>
+                  <artifactId>jaxb2-rich-contract-plugin</artifactId>
+                  <version>1.18.0</version>
+                </plugin>
+                <plugin>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-value-constructor</artifactId>
+                  <version>3.0</version>
+                </plugin>
+              </plugins>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
