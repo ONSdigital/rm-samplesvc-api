@@ -30,7 +30,7 @@
         <xsd:sequence>
 
 
-      <xsd:element name="line1" type="string_0_60" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="line1" type="string_0_60" nillable="true" minOccurs="0" maxOccurs="1" />
       <xsd:element name="line2" type="string_1_60" minOccurs="1" maxOccurs="1" />
       <xsd:element name="line3" type="string_0_60" minOccurs="0" maxOccurs="1" />
       <xsd:element name="line4" type="string_0_60" minOccurs="0" maxOccurs="1" />
