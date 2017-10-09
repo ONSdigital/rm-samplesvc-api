@@ -1,6 +1,7 @@
 package uk.gov.ons.ctp.response.sample.representation;
 
 import java.util.Date;
+import java.util.UUID;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -30,7 +31,7 @@ public class SampleSummaryDTO {
     ACTIVATED
   }
 
-  private Integer sampleSummaryPK;
+  private UUID id;
 
   private Date effectiveStartDateTime;
 
