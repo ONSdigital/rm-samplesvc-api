@@ -9,8 +9,8 @@ import net.sourceforge.cobertura.CoverageIgnore;
 @Data
 @Getter
 @AllArgsConstructor
-public class BusinessSurveySampleVerify extends SurveyBaseVerify {
+public class CensusSurveySample extends SurveyBase {
 
-  BusinessSampleUnitsVerify sampleUnits;
+  CensusSampleUnits sampleUnits;
 
 }

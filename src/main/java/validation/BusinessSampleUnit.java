@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 @CoverageIgnore
 @Data
 @Getter
-public class BusinessSampleUnitVerify extends SampleUnitBaseVerify {
+public class BusinessSampleUnit extends SampleUnitBase {
 
   private static final String NON_BLANK_INTEGER_RE = "[+-]?[\\d]+";
 
@@ -105,7 +105,7 @@ public class BusinessSampleUnitVerify extends SampleUnitBaseVerify {
 
   @NotNull
   @Size(min = 1, max = 4)
-  String formtype;
+  String formtype2;
 
   @Size(min = 0, max = 1)
   String currency;

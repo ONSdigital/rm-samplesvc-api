@@ -15,18 +15,17 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @Builder
 @NoArgsConstructor
-public class SurveyBaseVerify {
+public class SampleUnitBase {
 
   @NotNull
-  String surveyRef;
+  String sampleUnitRef;
 
   @NotNull
-  String collectionExerciseRef;
+  String sampleUnitType;
 
+  //TODO: Currently throws an error if formType is annotatd with @NotNull... despite having a value - why is this?
+  //TODO: Anything to do with formtype (lowercase) also existing in CSV?
   @NotNull
-  String effectiveStartDateTime;
-
-  @NotNull
-  String effectiveEndDateTime;
+  String formType;
 
 }
