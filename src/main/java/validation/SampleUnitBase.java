@@ -23,8 +23,6 @@ public class SampleUnitBase {
   @NotNull
   String sampleUnitType;
 
-  //TODO: Currently throws an error if formType is annotatd with @NotNull... despite having a value - why is this?
-  //TODO: Anything to do with formtype (lowercase) also existing in CSV?
   @NotNull
   String formType;
 

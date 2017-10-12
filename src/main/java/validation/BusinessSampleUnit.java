@@ -110,5 +110,4 @@ public class BusinessSampleUnit extends SampleUnitBase {
   @Size(min = 0, max = 1)
   String currency;
 
-
 }
