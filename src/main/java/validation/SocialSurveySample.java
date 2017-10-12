@@ -5,12 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import net.sourceforge.cobertura.CoverageIgnore;
 
+import java.util.List;
+
 @CoverageIgnore
 @Data
 @Getter
 @NoArgsConstructor
 public class SocialSurveySample extends SurveyBase {
 
-  SocialSampleUnits sampleUnits;
+  List<SocialSampleUnit> sampleUnits;
 
 }
