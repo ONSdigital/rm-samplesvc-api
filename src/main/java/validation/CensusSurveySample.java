@@ -1,14 +1,14 @@
 package validation;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import net.sourceforge.cobertura.CoverageIgnore;
 
 @CoverageIgnore
 @Data
 @Getter
-@AllArgsConstructor
+@NoArgsConstructor
 public class CensusSurveySample extends SurveyBase {
 
   CensusSampleUnits sampleUnits;
