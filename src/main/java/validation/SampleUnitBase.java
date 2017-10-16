@@ -20,7 +20,6 @@ public class SampleUnitBase {
   @NotNull
   String sampleUnitRef;
 
-  @NotNull
   String sampleUnitType;
 
   @NotNull
