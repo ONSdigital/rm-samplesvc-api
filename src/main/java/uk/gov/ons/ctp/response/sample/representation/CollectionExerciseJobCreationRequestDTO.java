@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -30,5 +31,9 @@ public class CollectionExerciseJobCreationRequestDTO {
   @NotNull
   @ApiModelProperty(required = true)
   private Date exerciseDateTime;
+
+  @NotNull
+  @ApiModelProperty(required = true)
+  private List<UUID> sampleSummaryUUIDList;
 
 }
