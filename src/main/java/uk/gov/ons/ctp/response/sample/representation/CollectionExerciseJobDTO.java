@@ -1,6 +1,7 @@
 package uk.gov.ons.ctp.response.sample.representation;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import lombok.AccessLevel;
@@ -24,4 +25,6 @@ public class CollectionExerciseJobDTO {
   private Date exerciseDateTime;
 
   private Date createdDateTime;
+
+  private List<UUID> sampleSummaryUUIDList;
 }
