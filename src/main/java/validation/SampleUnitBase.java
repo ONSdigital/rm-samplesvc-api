@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import net.sourceforge.cobertura.CoverageIgnore;
 
-import javax.validation.constraints.NotNull;
-
 @CoverageIgnore
 @Data
 @Getter
@@ -17,12 +15,10 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class SampleUnitBase {
 
-  @NotNull
   String sampleUnitRef;
 
   String sampleUnitType;
 
-  @NotNull
   String formType;
 
 }
