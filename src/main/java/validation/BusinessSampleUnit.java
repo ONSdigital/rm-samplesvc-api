@@ -14,6 +14,7 @@ import javax.validation.constraints.Size;
 public class BusinessSampleUnit extends SampleUnitBase {
 
   private static final String NON_BLANK_INTEGER_RE = "[+-]?[\\d]+";
+  private static final String DATE_REGEX = "^\\s*$|^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)$";
 
   @NotNull
   @Size(min = 1, max = 1)
@@ -60,7 +61,7 @@ public class BusinessSampleUnit extends SampleUnitBase {
   String region;
 
   @NotNull
-  @Size(min = 1, max = 10)
+  @Pattern(regexp = DATE_REGEX)
   String birthdate;
 
   @NotNull
