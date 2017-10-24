@@ -72,5 +72,7 @@ public class SampleUnitDTO {
   private String formType;
 
   private SampleUnitState state;
+  
+  private String sampleUnitId;
 
 }
