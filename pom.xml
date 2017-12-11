@@ -14,7 +14,7 @@
   <parent>
     <groupId>uk.gov.ons.ctp.product</groupId>
     <artifactId>rm-common-config</artifactId>
-    <version>10.49.5-SNAPSHOT</version>
+    <version>10.49.6</version>
   </parent>
   
   <properties>
@@ -23,9 +23,9 @@
   </properties>
 
   <scm>
-    <connection>scm:git:git@github.com:ONSdigital/rm-samplesvc-api.git</connection>
-    <developerConnection>scm:git:git@github.com:ONSdigital/rm-samplesvc-api.git</developerConnection>
-    <url>git@github.com:ONSdigital/rm-samplesvc-api.git</url>
+    <connection>scm:git:https://github.com/ONSdigital/rm-samplesvc-api</connection>
+    <developerConnection>scm:git:https://github.com/ONSdigital/rm-samplesvc-api</developerConnection>
+    <url>https://github.com/ONSdigital/rm-samplesvc-api</url>
   </scm>
 
   <dependencies>
