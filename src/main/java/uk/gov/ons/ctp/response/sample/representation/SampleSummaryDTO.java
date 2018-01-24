@@ -42,4 +42,8 @@ public class SampleSummaryDTO {
   private Date ingestDateTime;
 
   private SampleState state;
+
+  private Integer totalSampleUnits;
+
+  private Integer expectedCollectionInstruments;
 }
