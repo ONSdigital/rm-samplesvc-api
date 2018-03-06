@@ -104,10 +104,6 @@ public class BusinessSampleUnit extends SampleUnitBase {
   @Pattern(regexp = NON_BLANK_INTEGER_RE)
   String cell_no;
 
-  @NotNull
-  @Size(min = 1, max = 4)
-  String formtype2;
-
   @Size(min = 0, max = 1)
   String currency;
 
