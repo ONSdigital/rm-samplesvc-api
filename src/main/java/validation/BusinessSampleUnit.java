@@ -86,7 +86,6 @@ public class BusinessSampleUnit extends SampleUnitBase {
   @Size(min = 0, max = 1)
   String inclexcl;
 
-  @NotNull
   @Pattern(regexp = NON_BLANK_INTEGER_RE)
   String cell_no;
 
