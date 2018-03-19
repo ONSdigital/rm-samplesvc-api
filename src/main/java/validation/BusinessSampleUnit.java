@@ -62,7 +62,7 @@ public class BusinessSampleUnit extends SampleUnitBase {
   String entname3;
 
   @NotNull
-  @Size(min = 0, max = 35)
+  @Size(min = 1, max = 35)
   String runame1;
 
   @Size(min = 0, max = 35)
