@@ -13,59 +13,46 @@ import javax.validation.constraints.Size;
 @Getter
 public class BusinessSampleUnit extends SampleUnitBase {
 
-  private static final String NON_BLANK_INTEGER_RE = "[+-]?[\\d]+";
+  private static final String NON_BLANK_INTEGER_RE = "[+-]?[\\d]+|^$";
   private static final String DATE_REGEX = "^\\s*$|^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)$";
 
-  @NotNull
-  @Size(min = 1, max = 1)
+  @Size(min = 0, max = 1)
   String checkletter;
 
-  @NotNull
-  @Size(min = 1, max = 5)
+  @Size(min = 0, max = 5)
   String frosic92;
 
-  @NotNull
-  @Size(min = 1, max = 5)
+  @Size(min = 0, max = 5)
   String rusic92;
 
-  @NotNull
-  @Size(min = 1, max = 5)
+  @Size(min = 0, max = 5)
   String frosic2007;
 
-  @NotNull
-  @Size(min = 1, max = 5)
+  @Size(min = 0, max = 5)
   String rusic2007;
 
-  @NotNull
   @Pattern(regexp = NON_BLANK_INTEGER_RE)
   String froempment;
 
-  @NotNull
   @Pattern(regexp = NON_BLANK_INTEGER_RE)
   String frotover;
 
-  @NotNull
-  @Size(min = 1, max = 10)
+  @Size(min = 0, max = 10)
   String entref;
 
-  @NotNull
-  @Size(min = 1, max = 1)
+  @Size(min = 0, max = 1)
   String legalstatus;
 
-  @NotNull
-  @Size(min = 1, max = 1)
+  @Size(min = 0, max = 1)
   String entrepmkr;
 
-  @NotNull
-  @Size(min = 1, max = 2)
+  @Size(min = 0, max = 2)
   String region;
 
-  @NotNull
   @Pattern(regexp = DATE_REGEX)
   String birthdate;
 
-  @NotNull
-  @Size(min = 1, max = 35)
+  @Size(min = 0, max = 35)
   String entname1;
 
   @Size(min = 0, max = 35)
@@ -75,7 +62,7 @@ public class BusinessSampleUnit extends SampleUnitBase {
   String entname3;
 
   @NotNull
-  @Size(min = 1, max = 35)
+  @Size(min = 0, max = 35)
   String runame1;
 
   @Size(min = 0, max = 35)
@@ -93,8 +80,7 @@ public class BusinessSampleUnit extends SampleUnitBase {
   @Size(min = 0, max = 35)
   String tradstyle3;
 
-  @NotNull
-  @Size(min = 1, max = 1)
+  @Size(min = 0, max = 1)
   String seltype;
 
   @Size(min = 0, max = 1)
