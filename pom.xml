@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>samplesvc-api</artifactId>
-  <version>10.49.7-SNAPSHOT</version>
+  <version>10.49.7</version>
   <packaging>jar</packaging>
 
   <name>CTP : ResponseManagement : SampleSvcApi</name>
@@ -25,7 +25,7 @@
     <connection>scm:git:https://github.com/ONSdigital/rm-samplesvc-api</connection>
     <developerConnection>scm:git:https://github.com/ONSdigital/rm-samplesvc-api</developerConnection>
     <url>https://github.com/ONSdigital/rm-samplesvc-api</url>
-    <tag>HEAD</tag>
+    <tag>samplesvc-api-10.49.7</tag>
   </scm>
 
   <dependencies>
