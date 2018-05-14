@@ -46,4 +46,6 @@ public class SampleSummaryDTO {
   private Integer totalSampleUnits;
 
   private Integer expectedCollectionInstruments;
+
+  private String notes;
 }
