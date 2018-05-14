@@ -21,14 +21,14 @@ public class SampleSummaryDTO {
    * enum for Sample state
    */
   public enum SampleState {
-    ACTIVE, INIT,
+    ACTIVE, INIT, FAILED
   }
 
   /**
    * enum for Sample event
    */
   public enum SampleEvent {
-    ACTIVATED
+    ACTIVATED, FAIL_VALIDATION
   }
 
   private UUID id;
