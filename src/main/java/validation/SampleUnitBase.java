@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import net.sourceforge.cobertura.CoverageIgnore;
 
 import javax.validation.constraints.NotNull;
+import java.util.UUID;
 
 @CoverageIgnore
 @Data
@@ -24,5 +25,7 @@ public class SampleUnitBase {
 
   @NotNull
   String formType;
+
+  UUID sampleUnitId = UUID.randomUUID();
 
 }
