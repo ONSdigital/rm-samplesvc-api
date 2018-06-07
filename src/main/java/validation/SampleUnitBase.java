@@ -5,10 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
 import net.sourceforge.cobertura.CoverageIgnore;
 
-import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 
