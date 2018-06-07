@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import static uk.gov.ons.ctp.response.sample.representation.SampleSummaryDTO.ErrorCode.None;
+
 /**
  * Domain model object
  */
@@ -31,6 +33,17 @@ public class SampleSummaryDTO {
     ACTIVATED, FAIL_VALIDATION
   }
 
+  /**
+   * Enum to indicate error codes for sample uploads
+   * None - no error
+   * NotCsv - a sample file is not a csv
+   * DataError - a sample file contains a data error
+   * NotSpecified - an error has occurred but it's nature cannot be ascertained (e.g. generic Exception)
+   */
+  public enum ErrorCode {
+    None, NotCsv, DataError, NotSpecified
+  }
+
   private UUID id;
 
   private Date effectiveStartDateTime;
@@ -48,4 +61,6 @@ public class SampleSummaryDTO {
   private Integer expectedCollectionInstruments;
 
   private String notes;
+
+  private ErrorCode errorCode = None;
 }
