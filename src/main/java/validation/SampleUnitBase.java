@@ -5,7 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import net.sourceforge.cobertura.CoverageIgnore;  
+import net.sourceforge.cobertura.CoverageIgnore;
+
+import java.util.UUID;
+
 
 @CoverageIgnore
 @Data
@@ -20,5 +23,7 @@ public class SampleUnitBase {
   String sampleUnitType;
 
   String formType;
+
+  UUID sampleUnitId = UUID.randomUUID();
 
 }
