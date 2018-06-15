@@ -15,7 +15,7 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 public class SocialSampleUnit extends SampleUnitBase {
 
-    public static final Set<String> REQUIRED_ATTRIBUTES = ImmutableSet.of("Prem1", "PostTown", "Postcode", "CountryCode");
+    public static final Set<String> REQUIRED_ATTRIBUTES = ImmutableSet.of("Prem1", "PostTown", "Postcode", "CountryCode", "Reference");
     private Map<String, String> attributes;
 
     public SocialSampleUnit() {

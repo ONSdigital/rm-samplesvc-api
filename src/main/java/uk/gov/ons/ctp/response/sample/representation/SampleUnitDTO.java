@@ -1,5 +1,6 @@
 package uk.gov.ons.ctp.response.sample.representation;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -73,6 +74,8 @@ public class SampleUnitDTO {
 
   private SampleUnitState state;
   
-  private String sampleUnitId;
+  private String id;
 
+  @JsonInclude(JsonInclude.Include.NON_NULL)
+  private SampleAttributesDTO sampleAttributes;
 }
