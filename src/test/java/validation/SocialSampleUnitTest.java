@@ -20,6 +20,7 @@ public class SocialSampleUnitTest {
                 .put("Postcode", "ABC 123")
                 .put("PostTown", "test town")
                 .put("CountryCode", "GB")
+                .put("Reference", "LMS00001")
                 .build();
         socialSample.setAttributes(attributes);
 
@@ -39,6 +40,7 @@ public class SocialSampleUnitTest {
                 .put("Prem1", "test prem1")
                 .put("Postcode", "ABC 123")
                 .put("CountryCode", "GB")
+                .put("Reference", "LMS00001")
                 .build();
         socialSample.setAttributes(attributes);
 
@@ -59,6 +61,7 @@ public class SocialSampleUnitTest {
                 .put("Postcode", "ABC 123")
                 .put("PostTown", "test town")
                 .put("CountryCode", "GB")
+                .put("Reference", "LMS00001")
                 .build();
         socialSample.setAttributes(attributes);
 
