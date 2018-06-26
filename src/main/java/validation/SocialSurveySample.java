@@ -1,11 +1,10 @@
 package validation;
 
+import java.util.List;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import net.sourceforge.cobertura.CoverageIgnore;
-
-import java.util.List;
 
 @CoverageIgnore
 @Data
@@ -14,5 +13,4 @@ import java.util.List;
 public class SocialSurveySample extends SurveyBase {
 
   List<SocialSampleUnit> sampleUnits;
-
 }

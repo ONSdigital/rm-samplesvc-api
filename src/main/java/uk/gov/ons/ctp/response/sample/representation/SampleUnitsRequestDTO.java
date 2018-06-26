@@ -5,15 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * Domain model object
- */
+/** Domain model object */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-
 public class SampleUnitsRequestDTO {
 
   private Integer sampleUnitsTotal;
-
 }
