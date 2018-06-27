@@ -87,6 +87,7 @@ public class BusinessSampleUnit extends SampleUnitBase {
   String inclexcl;
 
   @Pattern(regexp = NON_BLANK_INTEGER_RE)
+  // CHECKSTYLE IGNORE MemberName FOR NEXT 1 LINES
   String cell_no;
 
   @Size(min = 0, max = 1)
