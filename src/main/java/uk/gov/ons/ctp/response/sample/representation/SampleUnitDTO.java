@@ -6,39 +6,41 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * Domain model object
- */
+/** Domain model object */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-
 public class SampleUnitDTO {
 
-  /**
-   * enum for SampleUnit state
-   */
+  /** enum for SampleUnit state */
   public enum SampleUnitState {
-    INIT, DELIVERED, PERSISTED, FAILED
+    INIT,
+    DELIVERED,
+    PERSISTED,
+    FAILED
   }
 
-  /**
-   * enum for SampleUnit event
-   */
+  /** enum for SampleUnit event */
   public enum SampleUnitEvent {
-    DELIVERING, PERSISTING, FAIL_VALIDATION
+    DELIVERING,
+    PERSISTING,
+    FAIL_VALIDATION
   }
 
-  /**
-   * enum for SampleUnit type
-   */
+  /** enum for SampleUnit type */
   public enum SampleUnitType {
-    HI(null), H(HI), CI(null), C(CI), BI(null), B(BI);
+    HI(null),
+    H(HI),
+    CI(null),
+    C(CI),
+    BI(null),
+    B(BI);
 
     private SampleUnitType child = null;
 
     /**
      * Constructor
+     *
      * @param childSampleUnitType of SampleUnitType.
      */
     SampleUnitType(SampleUnitType childSampleUnitType) {
@@ -47,6 +49,7 @@ public class SampleUnitDTO {
 
     /**
      * Get child SampleUnitType
+     *
      * @return child
      */
     public SampleUnitType getChild() {
@@ -55,6 +58,7 @@ public class SampleUnitDTO {
 
     /**
      * Boolean whether SampleUnitType has child.
+     *
      * @return boolean whether parent
      */
     public boolean isParent() {
@@ -73,7 +77,7 @@ public class SampleUnitDTO {
   private String formType;
 
   private SampleUnitState state;
-  
+
   private String id;
 
   @JsonInclude(JsonInclude.Include.NON_NULL)

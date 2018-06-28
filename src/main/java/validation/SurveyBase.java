@@ -1,13 +1,12 @@
 package validation;
 
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import net.sourceforge.cobertura.CoverageIgnore;
-
-import javax.validation.constraints.NotNull;
 
 @CoverageIgnore
 @Data
@@ -17,16 +16,11 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class SurveyBase {
 
-  @NotNull
-  String surveyRef;
+  @NotNull String surveyRef;
 
-  @NotNull
-  String collectionExerciseRef;
+  @NotNull String collectionExerciseRef;
 
-  @NotNull
-  String effectiveStartDateTime;
+  @NotNull String effectiveStartDateTime;
 
-  @NotNull
-  String effectiveEndDateTime;
-
+  @NotNull String effectiveEndDateTime;
 }

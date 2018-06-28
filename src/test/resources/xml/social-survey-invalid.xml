@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<p:socialSurveySample xmlns:p="http://ons.gov.uk/ctp/response/sample/definition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ons.gov.uk/ctp/response/sample/definition social-survey-sample.xsd ">
+<p:socialSurveySample xmlns:p="http://ons.gov.uk/ctp/response/sample/definition"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://ons.gov.uk/ctp/response/sample/definition social-survey-sample.xsd ">
   <surveyRef>surveyRef</surveyRef>
   <collectionExerciseRef>collectionExerciseRef</collectionExerciseRef>
   <effectiveStartDateTime>2001-12-31T12:00:00</effectiveStartDateTime>
