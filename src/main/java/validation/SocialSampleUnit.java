@@ -14,7 +14,7 @@ import org.apache.commons.lang3.StringUtils;
 public class SocialSampleUnit extends SampleUnitBase {
 
   public static final Set<String> REQUIRED_ATTRIBUTES =
-      ImmutableSet.of("Prem1", "PostTown", "Postcode", "CountryCode", "Reference");
+      ImmutableSet.of("POSTCODE", "COUNTRY", "REFERENCE", "TLA");
   private Map<String, String> attributes;
 
   public SocialSampleUnit() {

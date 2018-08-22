@@ -15,11 +15,10 @@ public class SocialSampleUnitTest {
     socialSample.setSampleUnitType("H");
     ImmutableMap<String, String> attributes =
         ImmutableMap.<String, String>builder()
-            .put("Prem1", "test prem1")
-            .put("Postcode", "ABC 123")
-            .put("PostTown", "test town")
-            .put("CountryCode", "GB")
-            .put("Reference", "LMS00001")
+            .put("POSTCODE", "ABC 123")
+            .put("COUNTRY", "E")
+            .put("REFERENCE", "00001")
+            .put("TLA", "LMS")
             .build();
     socialSample.setAttributes(attributes);
 
@@ -36,11 +35,9 @@ public class SocialSampleUnitTest {
     SocialSampleUnit socialSample = new SocialSampleUnit();
     socialSample.setSampleUnitType("H");
     ImmutableMap<String, String> attributes =
-        ImmutableMap.<String, String>builder()
-            .put("Prem1", "test prem1")
-            .put("Postcode", "ABC 123")
-            .put("CountryCode", "GB")
-            .put("Reference", "LMS00001")
+        ImmutableMap.<String, String>builder() // Note the absence of REFERENCE and TLA
+            .put("POSTCODE", "ABC 123")
+            .put("COUNTRY", "E")
             .build();
     socialSample.setAttributes(attributes);
 
@@ -48,7 +45,8 @@ public class SocialSampleUnitTest {
     List<String> errors = socialSample.validate();
 
     // Then
-    assertThat(errors).contains("PostTown");
+    assertThat(errors).contains("REFERENCE");
+    assertThat(errors).contains("TLA");
   }
 
   @Test
@@ -58,11 +56,10 @@ public class SocialSampleUnitTest {
     socialSample.setSampleUnitType("ANTISOCIAL");
     ImmutableMap<String, String> attributes =
         ImmutableMap.<String, String>builder()
-            .put("Prem1", "test prem1")
-            .put("Postcode", "ABC 123")
-            .put("PostTown", "test town")
-            .put("CountryCode", "GB")
-            .put("Reference", "LMS00001")
+            .put("POSTCODE", "ABC 123")
+            .put("COUNTRY", "GB")
+            .put("REFERENCE", "00001")
+            .put("TLA", "LMS")
             .build();
     socialSample.setAttributes(attributes);
 
